@@ -1,0 +1,142 @@
+<!-- <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Reservasi</h5>
+      <div class="row mb-3 mt-3">
+        <div class="col">
+          <div class="form-group">
+            <label>Nomor Kontrak</label>
+            <input
+              [(ngModel)]="reservasi.nomorKontrak"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Nomor BPKB</label>
+            <input
+              [(ngModel)]="reservasi.nomorBPKB"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Tipe Kendaraan</label>
+            <select [(ngModel)]="reservasi.tipeKendaraan" class="form-control">
+              <option [ngValue]="'mobil'">Mobil</option>
+              <option [ngValue]="'motor'">Motor</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3 mt-3">
+        <div class="col">
+          <div class="form-group">
+            <label>Jadwal</label>
+            <input
+              [(ngModel)]="reservasi.jadwal"
+              type="date"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Biaya Real</label>
+            <input
+              [(ngModel)]="reservasi.real"
+              type="number"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Biaya Estimasi</label>
+            <input
+              [(ngModel)]="reservasi.estimasi"
+              type="number"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  
+
+  <div class="container-fluid px-1" style="width: 100%; margin: 0 auto;">
+    <div class="row d-flex justify-content-center">
+        <div class="card">
+          <app-reservasi-choice (emitReservation)="onGetReservation($event)"></app-reservasi-choice>
+            <h3 class="text-center">Daftar Reservasi</h3>
+            
+            <p class="blue-text text-center">Lengkapi data-data berikut<br> agar customer dapat melakukan reservasi BPKB.</p>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                    <label>Nomor Kontrak<span class="text-danger"> *</span></label>
+                    <input [(ngModel)]="reservasi.nomorKontrak" type="text" class="form-control" placeholder="Masukkan nomor kontrak" />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                    <label>Nomor BPKB<span class="text-danger"> *</span></label>
+                    <input [(ngModel)]="reservasi.nomorBPKB" type="text" class="form-control" placeholder="Masukkan nomor BPKB" />
+                </div>
+            </div>
+            <div class="row justify-content-between text-left mt-2">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="mb-1">Tipe Kendaraan<span class="text-danger"> *</span></label>
+                    <select [(ngModel)]="reservasi.tipeKendaraan" class="form-control py-2">
+                        <option [ngValue]="'mobil'">Mobil</option>
+                        <option [ngValue]="'motor'">Motor</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label>Jadwal</label>
+                  <input
+                    [(ngModel)]="reservasi.jadwal"
+                    type="date"
+                    class="form-control"
+                  />
+                 
+                </div>
+            </div>
+            <div class="row justify-content-between text-left mt-2">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                    <label>Biaya Real<span class="text-danger"> *</span></label>
+                    <input [(ngModel)]="reservasi.real" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                    <label>Biaya Estimasi<span class="text-danger"> *</span></label>
+                    <input [(ngModel)]="reservasi.estimasi" type="number" class="form-control" />
+                </div>
+            </div>
+            <div class="row justify-content-between text-left mt-2">
+              <div class="form-group col-sm-6 flex-column d-flex custom-date-input">
+                <ngb-timepicker [(ngModel)]="time" />
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex mt-2">
+                <app-customer-detail [customer]="reservasi.customer" [buttonVisible]="false"></app-customer-detail>
+              </div>
+              
+          </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="form-group text-end"> <!-- Ganti text-right dengan text-end untuk Bootstrap 5 -->
+                        <button type="submit" class="btn btn-success" (click)="onCreate()">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- <p>Nomor BPKB: {{ reservasi.nomorBKPB }}</p>
+-->
+
+
+  

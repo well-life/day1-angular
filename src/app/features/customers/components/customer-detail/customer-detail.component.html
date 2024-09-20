@@ -1,0 +1,29 @@
+<li 
+  class="list-group-item d-flex justify-content-between align-items-start">
+  
+  <div class="mt-1 ms-2 me-auto">
+    <div class="fw-bold">{{ customer.name }} <span [ngClass]="getSpanColor(customer.status)">
+      {{ customer.status }}
+    </span></div>
+    {{ customer.email }}
+  </div>
+
+  <div class="d-flex flex-column align-items-end"> <!-- Menambahkan d-flex dan flex-column -->
+    
+    <button *ngIf="buttonVisible && customer"
+    (click)="customerReservasi()"
+     class="btn btn-secondary btn-sm mt-2 py-1" style="font-size: 12px;">Pilih</button>
+  </div>
+
+</li>
+
+<!-- <li
+  *ngIf="!customer"
+  (click)="customerReservasi()"
+  class="list-group-item d-flex justify-content-between align-items-start"
+>
+  No customer choice... {{ 1727505000000 | date : "full" }}
+</li> -->
+
+
+  

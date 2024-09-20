@@ -1,0 +1,56 @@
+<ol class="list-group list-group-numbered mb-3">
+    <app-customer-detail *ngFor="let customer of customers!.data" [customer]="customer">
+    </app-customer-detail>
+</ol>
+
+<div class="d-flex justify-content-center mt-3">
+<ngb-pagination
+          [(page)]="page"
+          [pageSize]="5"
+          [collectionSize]="customers.items"
+          (pageChange)="onPaginateCustomer($event)"
+        />
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <form class="form-inline">
+                              <input type="text">
+                          </form>
+                          <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Add New</a>
+                          
+                      </div>
+                  </div>
+                  
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      
+                      </tbody>
+                  </table>
+              </div>
+              <div class="panel-footer">
+                  <div class="row">
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->

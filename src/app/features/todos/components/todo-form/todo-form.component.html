@@ -1,0 +1,11 @@
+<div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Your task..."
+      [(ngModel)]="todo.task"
+      (change)="search()"
+    />
+    <button class="btn btn-primary" type="button" (click)="add()">Add</button>
+</div>
+  
